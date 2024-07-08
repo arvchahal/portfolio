@@ -10,36 +10,175 @@
     <link rel="stylesheet" href="./css/typography.css">
     <link rel="stylesheet" href="./css/utilities.css">
     <script defer src="./js/script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+        }
+        .nav-title {
+            font-size: 24px;
+            color: white;
+        }
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+        .nav-icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        .button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .subheader-text {
+            margin-bottom: 15px;
+        }
+        .main-title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .portfolio-header-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        #portfolio-header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .experience-card, .research-card, .coursework-card, .certification-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px; /* Reduced margin-bottom */
+        }
+        .experience-container, .research-container, .education-container, .certifications-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Adjust gap between cards */
+        }
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 20px; /* Space between project cards */
+            justify-content: space-between; /* Space out the project cards */
+        }
+        .project-card {
+            flex: 1 1 calc(33.333% - 20px); /* Adjusts the width of the cards to fit three in a row with gaps */
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+        @media (max-width: 768px) {
+            .project-card {
+                flex: 1 1 calc(50% - 20px); /* Adjusts to two cards per row on smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .project-card {
+                flex: 1 1 100%; /* Adjusts to one card per row on the smallest screens */
+            }
+        }
+        .subheader-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #444;
+        }
+        .body-text {
+            font-size: 1em;
+            color: #666;
+        }
+        .right-arrow-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        #footer {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .icon-link {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+        .footer-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .icon-link:hover .footer-icon {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+            box-shadow: rgb(57, 144, 215);
+        }
+    </style>
 </head>
 <body>
-    <!-- NAVBAR -->
     <div class="navbar">
-        <a class="nav-title-link" href="./index.html">
-            <span class="nav-title">Arnav Chahal's Portfolio</span>
+        <span class="nav-title">Arnav Chahal's Portfolio</span>
+        <div class="nav-icons">
+            <a href="https://www.linkedin.com/in/arnavchahal/" target="_blank">
+                <img src="./assets/icons/linkedin.png" class="nav-icon" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/arvchahal/" target="_blank">
+                <img src="./assets/icons/Github-desktop-logo-symbol.svg.png" class="nav-icon" alt="GitHub">
+            </a>
             <a class="button" href="mailto:chahalarnav123@gmail.com">
                 <span class="button-text">Contact Me</span>
             </a>
-        </a>
+        </div>
     </div>
-
     <!-- MAIN PAGE CONTENT -->
     <div id="main-content">
         <!-- PORTFOLIO HEADER -->
         <div id="portfolio-header">
             <div id="portfolio-header-image-container">
-                <img src="./assets/images/1311.png" class="portfolio-header-image">
-                <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
-                    <span class="image-caption">Unemployables #1311</span>
-                </a>
+                <img src="./assets/images/Arnav.jpg" class="portfolio-header-image">
             </div>
             <div id="portfolio-header-text-container">
                 <div class="header-text">
                     <span class="main-title">Hey, I'm Arnav Chahal.</span>
-                    <div class="body-text">I’m a developer and researcher focused on financial modeling, quantum computation, and various other projects. Here you can explore my work and get to know more about me.</div>
+                    <div class="body-text">I’m an aspiring Software Developer and Researcher with focuses in Machine Learning, Full Stack Development, and Cloud Computing with interests in financial modeling, quantum computation, and various other areas. Here you can explore my work and get to know more about me.</div>
                 </div>
                 <a class="button" id="my-work-link">
                     <span class="button-text">Check out my projects</span>
-                    <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
                 </a>
             </div>
         </div>
@@ -48,69 +187,270 @@
         <div id="about-section">
             <span class="subheader-text">My Background / About Me</span>
             <div class="about-section-content">
-                <div class="body-text">I am passionate about technology and finance, blending the two through various projects and research. I enjoy exploring new challenges and continuously learning to enhance my skills.</div>
-                <div class="body-text">With a background in software development and a keen interest in quantum computation, I aim to contribute to the evolving landscape of technology and finance through my work and collaborations.</div>
+                <div class="body-text">I am a student at Vanderbilt University, pursuing a Bachelor of Science degree in Applied Mathematics and Computer Science, as part of a 3+1 master's program that will also earn me a Master’s degree in Computer Science. My interests lie at the intersection of machine learning, physics, and software engineering, focusing on how these fields can be applied to solve real-world problems in various domains.</div>
+                <div class="body-text">I am passionate about technology and finance, blending the two through various projects and research. I have experience in software development, quantum physics and advanced math research, and machine learning applications across different fields, aiming to contribute to the evolving landscape of technology and finance through my work and collaborations.</div>
+                <div class="body-text">Outside of academics and professional interests, I am an avid poker player, golf enthusiast, and a fan of Formula 1 racing. I enjoy watching soccer and exploring the latest trends in cryptocurrency. In my free time, I delve into quantum mechanics and keep up with advancements in machine learning. </div>
+                <div class="body-text">I also really enjoy reading. Currently, I am reading "The Man in the Iron Mask," "The Canterbury Tales," and "Bulfinch's Mythology." Some of my favorite books include "The Idiot," "Blood Meridian," "The Secret History," "No Country for Old Men," "Hyperion," "Red Rising," "Whatever it Takes," "Vicious," "Notes from the Underground," and "White Nights."</div>
             </div>
         </div>
+        
 
         <!-- PROJECTS / MY WORK SECTION -->
         <div id="my-work-section">
-            <span class="subheader-text">My Work / My Projects</span>
+            <span class="subheader-text" style="font-size: x-large">My Work / My Projects</span>
             <div class="projects-container">
                 <div class="project-card">
-                    <img src="./assets/images/library.jpeg" class="project-image">
+                    <img src="./assets/icons/library_copy.webp" class="project-image">
                     <div class="project-card-text-container">
                         <div class="subheader-text project-title">Library of Alexandria</div>
-                        <div class="body-text project-card-text">A digital repository project aiming to preserve and provide access to knowledge and information.</div>
+                        <div class="body-text project-card-text">A digital library that allows for storage of books and personalized recommendations</div>
                     </div>
                     <a class="button" href="https://github.com/arvchahal/LibraryofAlexandria">
                         <span class="button-text">Read More</span>
-                        <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
                     </a>
                 </div>
+
                 <div class="project-card">
-                    <img src="./assets/images/options.jpeg" class="project-image">
-                    <div class="project-card-text-container">
-                        <div class="subheader-text project-title">Financial Options Pricing</div>
-                        <div class="body-text project-card-text">A project focused on implementing traditional options pricing algorithms.</div>
-                    </div>
-                    <a class="button" href="https://github.com/arvchahal/FinancialOptionsPrice">
-                        <span class="button-text">Read More</span>
-                        <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-                    </a>
-                </div>
-                <div class="project-card">
-                    <img src="./assets/images/anomaly.jpeg" class="project-image">
+                    <img src="./assets/icons/1000_F_299978128_VrSxbrMdiTHh4Zx51SGnpMtI24SZs8MD.jpg" class="project-image">
                     <div class="project-card-text-container">
                         <div class="subheader-text project-title">Financial Anomaly Detector</div>
                         <div class="body-text project-card-text">A tool designed to detect anomalies in financial data.</div>
                     </div>
                     <a class="button" href="https://github.com/arvchahal/FinancialAnomDetector">
                         <span class="button-text">Read More</span>
-                        <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
                     </a>
                 </div>
                 <div class="project-card">
-                    <img src="./assets/images/blackjack.jpeg" class="project-image">
+                  <img src="./assets/icons/1*XmJEJRBOIfSiot8Uf2RX6A.jpg" class="project-image">
+                  <div class="project-card-text-container">
+                      <div class="subheader-text project-title">Financial Options Pricing</div>
+                      <div class="body-text project-card-text">A project focused on implementing traditional options pricing algorithms.</div>
+                  </div>
+                  <a class="button" href="https://github.com/arvchahal/FinancialOptionsPrice">
+                      <span class="button-text">Read More</span>
+                      <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                  </a>
+              </div>
+                <div class="project-card">
+                    <img src="./assets/icons/quantum-computer.jpg" class="project-image">
+                    <div class="project-card-text-container">
+                        <div class="subheader-text project-title">Quantum Comp Research</div>
+                        <div class="body-text project-card-text">Research on implementing traditional options pricing algorithms using quantum computation techniques.</div>
+                    </div>
+                    <a class="button" href="https://github.com/arvchahal/quantumcompresearch">
+                        <span class="button-text">Read More</span>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <img src="./assets/icons/1*7gDQHwHoz2ZQUkHRfmEW5g.jpg" class="project-image">
                     <div class="project-card-text-container">
                         <div class="subheader-text project-title">Blackjack Game</div>
                         <div class="body-text project-card-text">A simple implementation of the classic Blackjack game.</div>
                     </div>
                     <a class="button" href="https://github.com/arvchahal/Blackjack">
                         <span class="button-text">Read More</span>
-                        <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
                     </a>
                 </div>
-                <div class="project-card">
-                    <img src="./assets/images/quantum.jpeg" class="project-image">
-                    <div class="project-card-text-container">
-                        <div class="subheader-text project-title">Quantum Computation Research</div>
-                        <div class="body-text project-card-text">Research on implementing traditional options pricing algorithms using quantum computation techniques.</div>
+            </div>
+        </div>
+
+        <!-- EXPERIENCE SECTION -->
+        <div id="experience-section">
+            <span class="subheader-text" style="font-size: x-large;">Experience</span>
+            <br>
+            <div class="experience-container">
+                <div class="experience-card">
+                    <div class="experience-card-text-container">
+                        <div class="subheader-text company-title">Asurion</div>
+                        <div class="subheader-text experience-title">DevOps Engineer Intern</div>
+                        <span style="float: right; font-size: smaller;">May 2024 - Present</span>
+                        <ul class="body-text experience-card-text">
+                            <li>Developed and automated Python scripts that run weekly to remove inactive users on Jira and Confluence: removed 200+ users.</li>
+                            <li>Wrote and integrated Javascript code into ServiceNow adding timestamp tags to incident tickets in the NOC’s incident buckets.</li>
+                            <li>Automated AWS EKS cluster and node group upgrades using Github Action: updated 10+ clusters and 25+ node groups.</li>
+                            <li>Designed an API gateway on AWS to facilitate communication between various monitoring platforms and the AI-ops platform.</li>
+                            <li>Created a PowerBi dashboard to create quarterly scorecards for 50+ teams that graded ticket acknowledgment and resolution times.</li>
+                        </ul>
                     </div>
-                    <a class="button" href="https://github.com/arvchahal/quantumcompresearch">
-                        <span class="button-text">Read More</span>
-                        <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-                    </a>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-card-text-container">
+                        <div class="subheader-text company-title">Steel Key Capital</div>
+                        <div class="subheader-text experience-title">Digital Asset Research Intern</div>
+                        <span style="float: right; font-size: smaller;">June 2023 - July 2023</span>
+                        <ul class="body-text experience-card-text">
+                            <li>Managed 5 industry-wide projects in the Liquid Staking Derivatives sector, resulting in a 10% increase in the firm's staking position.</li>
+                            <li>Conducted extensive research and analysis on emerging crypto projects and Layer 2 protocols, providing investment strategies.</li>
+                            <li>Developed investment theses as well as set up managerial calls with C-Suite executives in emerging LSD-Fi crypto projects.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-card-text-container">
+                        <div class="subheader-text company-title">Vanderbilt University</div>
+                        <div class="subheader-text experience-title">Undergraduate Teaching Assistant</div>
+                        <span style="float: right; font-size: smaller;">August 2023 - Present</span>
+                        <ul class="body-text experience-card-text">
+                            <li>Current TA for CS 4262: Machine Learning: an upper level CS class that teaches ML concepts such as PCA,SVMs,Neural Networks, and more</li>
+                            <li> Previous TA for CS 3265: Database Management Systems (DBMS). A CS class that teaches Relational Algebra, MySQL, and Database Normalizaton</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-card-text-container">
+                        <div class="subheader-text company-title">VandyHacks</div>
+                        <div class="subheader-text experience-title">Director of Sponsorship & Treasurer</div>
+                        <span style="float: right; font-size: smaller;">March 2023 - Present</span>
+                        <ul class="body-text experience-card-text">
+                            <li>Raised over $30,000 for VandyHacks Hackathons, adding sponsors such as Red Bull, Careyaya, Desmos, echo3D, Phosphorus.</li>
+                            <li>Oversee VandyHacks’ financial operations, ensuring accurate management of organizational expenses and account transactions
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RESEARCH SECTION -->
+        <div id="research-section">
+            <span class="subheader-text" style="font-size: x-large;">Research</span>
+            <br>
+            <div class="research-container">
+                <div class="research-card">
+                    <div class="research-card-text-container">
+                        <div class="subheader-text research-title">Quantum Physics Lab</div>
+                        <div class="body-text research-card-text">Solving Schrödinger's equation in a two-electron system using the time-dependent variation principle, and generalizing it to solve for "n" electrons. Developing a Python script to facilitate these calculations.</div>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-card-text-container">
+                        <div class="subheader-text research-title">MAPLE Lab: Machine Automation, Perception and Learning</div>
+                        <div class="body-text research-card-text">Using machine learning for the detection of liver diseases and exploring its application in surgical robots in Professor Wu’s MAPLE lab.</div>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-card-text-container">
+                        <div class="subheader-text research-title">Quantum Computation Research</div>
+                        <div class="body-text research-card-text">Research on implementing traditional options pricing algorithms using quantum computation techniques.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COURSEWORK SECTION -->
+        <div id="education-section">
+            <span class="subheader-text" style="font-size: x-large;">Education:</span>
+            
+            <div class="education-container">
+                <div class="coursework-card">
+                    <div class="subheader-text coursework-title">
+                        <span style="font-size: large;">Vanderbilt University</span>
+                        <span style="float: right; font-size: smaller;">2024 - 2026</span>
+                    </div>
+                    <div class="subheader-text" style="font-size: medium; font-weight: bold; margin-top: 10px;">
+                        Master of Science in Computer Science
+                    </div>
+                    <h4>Relevant Coursework</h4>
+                    <ul class="body-text coursework-card-text" style="margin-left: 20px;">
+                        <li>Advanced Machine Learning</li>
+                        <li>Extended Mathematical Programming</li>
+                    </ul>
+                </div>
+                <div class="coursework-card">
+                    <div class="subheader-text coursework-title">
+                        <span style="font-size: large;">Vanderbilt University</span>
+                        <span style="float: right; font-size: smaller;">2022 - 2026</span>
+                    </div>
+                    <div class="subheader-text" style="font-size: medium; font-weight: bold; margin-top: 10px;">
+                        Bachelor of Science in Computer Science and Applied Mathematics, Minor: Physics
+                    </div>
+                    <h4>Relevant Coursework</h4>
+                    <ul class="body-text coursework-card-text" style="margin-left: 20px;">
+                        <li>Data Structures</li>
+                        <li>Algorithms</li>
+                        <li>Intermediate Software Design</li>
+                        <li>Machine Learning</li>
+                        <li>Operating Systems</li>
+                        <li>Probability and Statistics</li>
+                        <li>Database Management Systems</li>
+                        <li>Quantum Mechanics</li>
+                        <li>Linear Algebra</li>
+                        <li>Differential Equations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <div id="certifications-section">
+            <span class="subheader-text" style="font-size: x-large;">Certifications</span>
+            <br>
+            <div class="certifications-container">
+                <div class="certification-card">
+                    <div class="certification-card-text-container">
+                        <div class="subheader-text certification-title">AWS Certified Cloud Practitioner</div>
+                        <div class="body-text certification-card-text">
+                            Issued Jul 2024 · Expires Jul 2027<br>
+                            Credential ID: bf274857b84349f689d416a0010dd4fa
+                            <h4>Skills</h4>
+                            <ul style="margin-left: 20px;">
+                                <li>Amazon Web Services (AWS)</li>
+                                <li>Cloud Computing</li>
+                                <li>AWS Command Line Interface (CLI)</li>
+                                <li>Solution Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-card-text-container">
+                        <div class="subheader-text certification-title">Machine Learning Specialization</div>
+                        <div class="body-text certification-card-text">
+                            Issued Aug 2023<br>
+                            Credential ID: PUALAJUQQDBH
+                            <h4>Skills</h4>
+                            <ul style="margin-left: 20px;">
+                                <li>Supervised Learning</li>
+                                <li>TensorFlow</li>
+                                <li>Decision Trees</li>
+                                <li>Unsupervised Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-card-text-container">
+                        <div class="subheader-text certification-title">Options 101: Akuna Capital University</div>
+                        <div class="body-text certification-card-text">
+                            Issued Aug 2023<br>
+                            Credential ID: cert_vw4ggqcy
+                            <h4>Skills</h4>
+                            <ul style="margin-left: 20px;">
+                                <li>Financial Options</li>
+                                <li>Problem Solving</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-card-text-container">
+                        <div class="subheader-text certification-title">Introduction to DevOps</div>
+                        <div class="body-text certification-card-text">
+                            Issued Jul 2023<br>
+                            Credential ID: 5CL39MLQRKPB
+                            <h4>Skills</h4>
+                            <ul style="margin-left: 20px;">
+                                <li>Continuous Integration and Continuous Delivery (CI/CD)</li>
+                                <li>Test-Driven Development</li>
+                                <li>DevOps</li>
+                                <li>Agile Methodologies</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -119,13 +459,13 @@
     <!-- FOOTER -->
     <div id="footer">
         <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/arnavchahal/">
-            <image src="./assets/icons/linkedin.svg" class="footer-icon"/>
+            <img src="./assets/icons/linkedin.png" class="footer-icon"/>
         </a>
         <a class="icon-link" target="_blank" href="mailto:chahalarnav123@gmail.com">
-            <image src="./assets/icons/mail.svg" class="footer-icon"/>
+            <img src="./assets/icons/112-gmail_email_mail-512.webp" class="footer-icon"/>
         </a>
         <a class="icon-link" target="_blank" href="https://github.com/arvchahal/">
-            <image src="./assets/icons/github.svg" class="footer-icon"/>
+            <img src="./assets/icons/Github-desktop-logo-symbol.svg.png" class="footer-icon"/>
         </a>
     </div>
 </body>
